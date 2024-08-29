@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunas Talaan</title>
+    <link rel="stylesheet" href="install.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./img/Lunas.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">LUNAS TALAAN</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Features</a></li>
+                <li><a href="index.html">Reviews</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="install.html" class="install-link">Install</a></li>
+                <li><a href="https://console.firebase.google.com/" class="admin-link" target="_blank">Admin</a></li>
+            </ul>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+        </div>
+    </header>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <section id="install" class="hero">
+        <div class="container">
+            <h2>INSTALL LUNAS TALAAN</h2>
+            <img src="./img/lunas talaan qr code.jpg" alt="QR Code for Lunas Talaan" class="qr-code">
+            <div class="install-steps">
+                <p><strong>Step 1:</strong> Open your phone's camera and scan the QR code above.</p>
+                <p><strong>Step 2:</strong> Tap on the notification that appears to open the download link.</p>
+                <p><strong>Step 3:</strong> Follow the instructions on the screen to install the application.</p>
+                <p><strong>Step 4:</strong> Make sure to enable or allow “Install Unknown Apps” in your device setting.</p>
+                <p><strong>Step 5:</strong> Once installed, open the Lunas Talaan app and sign up or log in.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features" class="features">
+        <h2>DOWNLOAD USER MANUAL</h2>
+        <div class="container">
+            <div class="feature-item">
+                <span class="icon">&#x1F4C4;</span>
+                <h3>User Manual</h3>
+                <p>Download our user manual to learn how to use the Lunas Talaan app effectively.</p>
+                <pre>
+                    
+                </pre>
+                <a href="https://drive.google.com/file/d/1qmEJCNgVcg0r17WrQio4ArrWQWSo-q9I/view?usp=drive_link" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="admin" class="admin">
+        <div class="container">
+            <div class="powered-by">
+                <p>POWERED BY</p>
+                <img src="./img/firebase-logo.png" alt="Firebase Logo" class="firebase-logo">
+                <img src="./img/flutter-logo.png" alt="Flutter Logo" class="flutter-logo">
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <p>CONTACT US AT</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/lunastalaan" target="_blank" class="facebook-icon">
+                    <i class="fab fa-facebook-f"></i> Lunas Talaan
+                </a>
+                <a href="mailto:lunastalaan@gmail.com" class="email-icon">
+                    <i class="fas fa-envelope"></i> lunastalaan@gmail.com
+                </a>
+            </div>
+        <p>&copy; 2024 Coding Brigade. All rights reserved.</p>
+        <h3>Visitors:</h3>
+        <div id="visitor-counter">
+            <p>This page has been visited <span id="count">0</span> times.</p>
+        </div>
+    </div>
+</footer>
+    
+    <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            const navLi = document.querySelectorAll('header nav ul li a');
+            const header = document.querySelector('header');
+            const installLink = document.querySelector('.install-link');
+
+            window.onscroll = () => {
+                let current = "";
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLi.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.getAttribute('href').includes(current)) {
+                        li.classList.add('active');
+                    }
+                });
+
+                if (current === 'features' || current === 'reviews' || current === 'admin') {
+                    header.classList.add('scrolled');
+                    installLink.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                    installLink.classList.remove('scrolled');
+                }
+            };
+        });
+
+        const menuToggle = document.querySelector('.menuToggle');
+        const navigation = document.querySelector('.navigation');
+
+        menuToggle.addEventListener('click', () => {
+            navigation.classList.toggle('active');
+        });
+    
+        
+const toTop = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 100) {
+        toTop.classList.add("active");
+    } else {
+        toTop.classList.remove("active");
+    }
+})
+
+if (localStorage.pagecount) {
+        localStorage.pagecount = Number(localStorage.pagecount) + 1;
+    } else {
+        localStorage.pagecount = 1;
+    }
+    document.getElementById('count').textContent = localStorage.pagecount;
+        
+        
+        
+    </script>
+</body>
+</html>
