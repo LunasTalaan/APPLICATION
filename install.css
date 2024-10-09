@@ -149,7 +149,7 @@ header ul li a.admin-link:hover {
 /* Hero section styles */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 110vh;
     background-color: #005BBB; /* Change this to the solid color you prefer */
     color: #fff;
     text-align: center;
