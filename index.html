@@ -24,25 +24,25 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="install.html" class="install-link">Install</a></li>
             </ul>
-            
+    
             <!-- Toggle button inside the same div -->
             <div class="menuToggle">
-                <ion-icon name="menu-outline"></ion-icon>
+                <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
             </div>
         </div>
     </header>
     
-    <!-- Ionicons (Keep them, but now optional) -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <!-- FontAwesome (Replaces Ionicons) -->
+    <script src="https://kit.fontawesome.com/YOUR_FA_KIT.js" crossorigin="anonymous"></script>
     
     <script> 
         let navigation = document.querySelector('.navigation');
         let menuToggle = document.querySelector('.menuToggle');
         let header = document.querySelector('header');
-        
+    
         menuToggle.onclick = function(){
             header.classList.toggle('open');
-            navigation.classList.toggle('active'); // Ensure menu opens properly
+            navigation.classList.toggle('active'); 
         }
     </script>
     
