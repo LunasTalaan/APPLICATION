@@ -80,9 +80,9 @@ header ul li a::after {
 }
 
 
-header  ul li a.active {
+/* header  ul li a.active {
     
-}
+} */
 
 .scrolled .logo, 
 header.scrolled ul li a {
