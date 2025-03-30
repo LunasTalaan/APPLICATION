@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Deletion Request</title>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,52 +43,20 @@
     <div class="container">
         <h2>Request Account Deletion</h2>
         <p>If you want to delete your account, please fill out this form.</p>
-        <form id="deleteForm">
+        
+        <form action="https://formsubmit.co/lunastalaan@gmail.com" method="POST">
+            <!-- Hidden fields for subject & auto-response -->
+            <input type="hidden" name="_subject" value="Account Deletion Request">
+            <input type="hidden" name="_autoresponse" value="Hello! Your request has been received. If you did not request this, contact us at lunastalaan@gmail.com">
+
             <label for="email">Your Email:</label>
-            <input type="email" id="email" required>
+            <input type="email" name="email" required>
 
             <label for="reason">Reason for Deletion:</label>
-            <textarea id="reason" required></textarea>
+            <textarea name="reason" required></textarea>
 
             <button type="submit">Submit Request</button>
         </form>
-        <p id="responseMessage"></p>
     </div>
-
-    <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY");  // Replace with your EmailJS public key
-        })();
-
-        document.getElementById("deleteForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let userEmail = document.getElementById("email").value;
-            let reason = document.getElementById("reason").value;
-
-            // Send request email to admin
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                to_email: "lunastalaan@gmail.com",
-                user_email: userEmail,
-                reason: reason
-            }).then(function(response) {
-                console.log("Request sent:", response);
-                document.getElementById("responseMessage").innerText = "Request sent successfully!";
-
-                // Auto-respond to user
-                emailjs.send("YOUR_SERVICE_ID", "YOUR_AUTO_RESPONSE_TEMPLATE_ID", {
-                    user_email: userEmail
-                });
-
-            }).catch(function(error) {
-                console.error("Error:", error);
-                document.getElementById("responseMessage").innerText = "Failed to send request.";
-            });
-
-            // Clear form
-            document.getElementById("deleteForm").reset();
-        });
-    </script>
 </body>
 </html>
