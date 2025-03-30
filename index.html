@@ -1,6 +1,7 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunas Talaan</title>
@@ -9,39 +10,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-fm/KDG/H4eVr9cL7YypJ6vMl2NMVyTf/8PcrbJQ6PfHW7aFz4efr9Z1ZtFbOpWLaZopQPAe4zFJTjR0f2Pn+dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./img/Lunas.png" type="image/x-icon">
-
-
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qusrx5f6f9");
+    </script>
 </head>
 <body>
     <header>
         <a href='#' class="logo">LUNAS TALAAN</a>
         <div class="group">
-                <ul class ="navigation">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="install.html" class="install-link">Install</a></li>
-                </ul>
-            
-            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
-
+            <ul class="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="install.html" class="install-link">Install</a></li>
+            </ul>
+    
+            <!-- Toggle button inside the same div -->
+            <div class="menuToggle">
+                <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+            </div>
         </div>
     </header>
     
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- FontAwesome (Replaces Ionicons) -->
+    <script src="https://kit.fontawesome.com/YOUR_FA_KIT.js" crossorigin="anonymous"></script>
     
-   <script> 
+    <script> 
         let navigation = document.querySelector('.navigation');
         let menuToggle = document.querySelector('.menuToggle');
         let header = document.querySelector('header');
-        
+    
         menuToggle.onclick = function(){
             header.classList.toggle('open');
+            navigation.classList.toggle('active'); 
         }
-    
     </script>
     
     
@@ -243,6 +251,11 @@ if (localStorage.pagecount) {
         
         
     </script>
+    <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
     
 </body>
 </html>
